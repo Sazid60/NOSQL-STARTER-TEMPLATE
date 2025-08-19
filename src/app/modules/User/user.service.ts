@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { IAuthProvider, IUser, Role } from "./user.interface"
 import httpStatus from 'http-status-codes';
 import { User } from "./user.model";

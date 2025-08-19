@@ -6,6 +6,7 @@ export const createUserZodSchema = z.object({
         .string({ error: (issue) => issue.input === undefined ? "Name Is Required" : "Not A String" })
         .min(2, { error: "Name must be at least 2 characters long." })
         .max(50, { error: "Name cannot exceed 50 characters." }),
+    picture: z.string().optional(),
     email: z
         .email({
             error: (issue) =>
@@ -44,6 +45,7 @@ export const updateUserZodSchema = z.object({
         .min(2, { error: "Name must be at least 2 characters long." })
         .max(50, { error: "Name cannot exceed 50 characters." })
         .optional(),
+    picture: z.string().optional(),
     password: z
         .string({ error: (issue) => issue.input === undefined ? "Password must be provided" : "Password must be string" })
         .min(8, { error: "Password must be at least 8 characters long." })

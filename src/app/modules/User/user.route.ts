@@ -16,8 +16,8 @@ router.get("/all-users", checkAuth(Role.ADMIN), UserController.getAllUsers)
 router.get("/me", checkAuth(...Object.values(Role)), UserController.getMe)
 
 
-router.patch("/:id", validateRequest(updateUserZodSchema), checkAuth(...Object.values(Role)), UserController.updateUser)
-router.get("/:id",checkAuth(Role.ADMIN), UserController.getSingleUser)
+router.patch("/:id", multerUpload.single("file"), validateRequest(updateUserZodSchema), checkAuth(...Object.values(Role)), UserController.updateUser)
+router.get("/:id", checkAuth(Role.ADMIN), UserController.getSingleUser)
 
 
 export const UserRoutes = router 
