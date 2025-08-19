@@ -20,7 +20,7 @@ export const seedAdmin = async () => {
             providerId: envVars.ADMIN_EMAIL
         }
 
-        const payload: Partial<IUser> = {
+        const payload: IUser = {
             name: "Admin",
             role: Role.ADMIN,
             email: envVars.ADMIN_EMAIL,

@@ -20,7 +20,7 @@ const userSchema = new Schema<IUser>({
         default: Role.USER
     },
     phone: { type: String },
-    picture: { type: String, required:true },
+    picture: { type: String},
     address: { type: String },
     isDeleted: { type: Boolean, default: false },
     isActive: {
